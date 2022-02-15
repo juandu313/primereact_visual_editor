@@ -1,0 +1,119 @@
+.layout-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  color: rgba(255,255,255,0.8);
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+  
+  .intro-title {
+      font-weight: 300;
+      animation: fadeInDown 1s;
+
+      i {
+          font-size: 1.75rem;
+      }
+  }
+}
+
+.theme-options {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.theme-option {
+  padding: 2rem;
+
+  button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: transparent;
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+      border: 0 none;
+      transition: transform .3s;
+      outline: 0 none;
+
+      &:hover {
+          transform: scale(1.1);
+      }
+
+      &:focus {
+          outline: 0 none;
+      }
+
+      img {
+          width: 50px;
+          outline: 0 none;
+      }
+  }
+
+  &.theme-option {
+      animation: fadeInUp 1s;
+
+      &.theme-option-leave {
+          animation: fadeOut 1s forwards;
+      }
+  }
+}
+
+.p-tooltip.intro {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  
+  .p-tooltip-text {
+      background: #212121;
+      color: #ffffff;
+      padding: .5rem;
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+      border-radius: 4px;
+  }
+  
+  &.p-tooltip-bottom {
+      .p-tooltip-arrow {
+          border-bottom-color: transparent;
+      }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+from {
+  opacity: 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+}
+
+@keyframes fadeOut {
+from {
+  opacity: 1;
+}
+
+to {
+  opacity: 0;
+}
+}
